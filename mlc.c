@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "translate.h"
 
 int main(int argc, char *argv[])
 {
@@ -9,9 +10,11 @@ int main(int argc, char *argv[])
 			FILE *lang = fopen(&argv[1][2], "r"); /* load language file */
 			if(lang != NULL) printf("Language loaded successfully!\n"); 
 			
-			if(argv[2][1] == 'o') /* output flag */
+			if(argv[3][1] == 'o') /* output flag */
 			{
-				printf("Hello, Output!\n");
+				FILE *inputf = fopen(argv[2], "r"); /* input file */
+				FILE *outputf = fopen(argv[4], "w"); /* output file */
+				translate(inputf, outputf); /* translate the file */
 			} else /* no output */
 			{
 				printf("Output is not set, use the -o flag\n");
