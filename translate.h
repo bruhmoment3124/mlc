@@ -1,7 +1,11 @@
 
 /* translate the file */
-void translate(FILE *input, FILE *output)
+void translate(FILE *lang, FILE *input, FILE *output)
 {
-	if(input != NULL) printf("Input file loaded successfully!\n");
-	if(output != NULL) printf("Output file loaded successfully!\n");
+	char c = fgetc(input);
+	while(c != EOF) /* until the file ends */
+	{
+		fputc(c, output); /* print characters in the output file */
+		c = fgetc(input); /* continue getting characters from the input file*/
+	}
 }

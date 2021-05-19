@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 			{
 				FILE *inputf = fopen(argv[2], "r"); /* input file */
 				FILE *outputf = fopen(argv[4], "w"); /* output file */
-				translate(inputf, outputf); /* translate the file */
+				translate(lang, inputf, outputf); /* translate the file */
 			} else /* no output */
 			{
 				printf("Output is not set, use the -o flag\n");
