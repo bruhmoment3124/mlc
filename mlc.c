@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "translate.h"
 
 int main(int argc, char *argv[])
@@ -13,8 +15,11 @@ int main(int argc, char *argv[])
 			if(argv[3][1] == 'o') /* output flag */
 			{
 				FILE *inputf = fopen(argv[2], "r"); /* input file */
-				FILE *outputf = fopen(argv[4], "w"); /* output file */
+				FILE *outputf = fopen(argv[4], "w+"); /* output file */
 				translate(lang, inputf, outputf); /* translate the file */
+				
+				fclose(inputf); /* close input file */
+				fclose(outputf); /* close output file */
 			} else /* no output */
 			{
 				printf("Output is not set, use the -o flag\n");
