@@ -1,7 +1,10 @@
+### NOTE:
+mlc is not actually a compiler, it's a translator
+
 # mlc
 mlc is the multi-language compiler, it compiles user defined languages into english for use in programming
 
-a compile script might look something like this
+a compile script for french might look something like this
 ```
 mlc -Lfr.txt main-fr.c -o main-en.c
 ```
